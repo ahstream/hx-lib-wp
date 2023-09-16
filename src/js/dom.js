@@ -40,6 +40,30 @@ export async function waitForTextContent(text, selector, maxWait, interval, opti
   return null;
 }
 
+export function getTextContent(text, selector, options) {
+  const elems = getElementsByText(text, selector, options);
+  if (elems && elems.length) {
+    return elems[0];
+  }
+  return null;
+}
+
+export function getTextContains(text, selector) {
+  return getTextContent(text, selector, { contains: true });
+}
+
+export function getTextStartsWith(text, selector) {
+  return getTextContent(text, selector, { startsWith: true });
+}
+
+export function getTextEndsWith(text, selector) {
+  return getTextContent(text, selector, { endsWith: true });
+}
+
+export function getTextEquals(text, selector) {
+  return getTextContent(text, selector, { equals: true });
+}
+
 export async function waitForTextContains(text, selector, maxWait = 30000, interval = 1000) {
   return waitForTextContent(text, selector, maxWait, interval, { contains: true });
 }
@@ -107,7 +131,7 @@ export function simulateMouseEvent(element, eventName, coordX, coordY) {
       clientX: coordX,
       clientY: coordY,
       button: 0,
-    }),
+    })
   );
 }
 
