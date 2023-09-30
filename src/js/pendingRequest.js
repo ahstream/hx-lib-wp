@@ -12,7 +12,10 @@ export async function dispatch(url, lifetimeSecs = null) {
   // console.log('dispatch url', url, lifetimeSecs);
   const key = normalizePendingLink(url);
   const container = await chrome.storage.local.get(key);
+  console.log('container', JSON.stringify(container));
+  console.log('container', container);
   let request = container ? container[key] : null;
+  console.log('key, request', key, request);
   // console.log('dispatch request, container:', request, container);
   if (request) {
     if (lifetimeSecs) {
