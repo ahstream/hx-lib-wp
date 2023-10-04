@@ -1,8 +1,7 @@
 {
-  "name": "@ahstream/hx-lib",
+  "name": "hx-lib",
   "version": "1.0.0",
   "description": "Hx Library Functions",
-  "author": "hstream@gmail.com",
   "license": "UNLICENSED",
   "main": "dist/index.js",
   "browserslist": "> 0.25%, not dead",

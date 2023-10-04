@@ -17,7 +17,7 @@ npm run build:publish
 ## Consume NPM package
 
 ```
-npm add --save @ahstream/hx-utils
+npm add --save hx-lib
 
-npm update --save @ahstream/hx-utils
+npm update --save hx-lib
 ```
